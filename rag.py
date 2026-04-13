@@ -3,7 +3,6 @@ import os
 import time
 import numpy as np
 import pandas as pd
-import ollama
 from mistralai.client import Mistral
 from sklearn.metrics.pairwise import cosine_similarity
 from dotenv import load_dotenv

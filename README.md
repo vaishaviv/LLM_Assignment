@@ -1,5 +1,32 @@
 # Illinois Advanced Research Center SG (IARCS) — Take Home Assignment
 
+## How to Run
+
+1. Install dependencies.
+
+```powershell
+pip install pandas python-dotenv pydantic openai google-genai mistralai numpy scikit-learn
+```
+
+2. Add API keys in `.env`
+```env
+OPENAI_API_KEY=your_openai_key
+GOOGLE_API_KEY=your_google_key
+MISTRAL_API_KEY=your_mistral_key
+```
+
+3. Run the base multi-model evaluation.
+
+```powershell
+python task.py
+```
+
+4. Run the RAG pipeline.
+
+```powershell
+python rag.py
+```
+
 **Author:** Vaishavi Venkatesh  
 **Date:** 13/04/2026
 
