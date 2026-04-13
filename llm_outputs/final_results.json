@@ -1,0 +1,239 @@
+[
+  {
+    "cve": "CVE-2021-21148",
+    "per_model": {
+      "gpt-4o-mini": [
+        {
+          "technique_id": "T1203",
+          "technique_name": "Exploitation for Client Execution",
+          "reasoning": "The vulnerability allows for exploitation via a crafted HTML page, which is a common vector for remote code execution in client applications.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1203/"
+        },
+        {
+          "technique_id": "T1068",
+          "technique_name": "Exploitation for Privilege Escalation",
+          "reasoning": "If the attacker can exploit the heap buffer overflow, they may gain elevated privileges depending on the context in which the browser is running.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1068/"
+        },
+        {
+          "technique_id": "T1190",
+          "technique_name": "Exploit Public-Facing Application",
+          "reasoning": "The attack vector involves a public-facing application (Google Chrome) that can be exploited by a remote attacker.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1190/"
+        },
+        {
+          "technique_id": "T1071",
+          "technique_name": "Application Layer Protocol",
+          "reasoning": "The exploitation may involve communication over application layer protocols, such as HTTP, to deliver the crafted HTML page.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1071/"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "technique_id": "T1203",
+          "technique_name": "Exploitation for Client Execution",
+          "reasoning": "The CVE describes a heap buffer overflow in the V8 engine of Google Chrome, which can be exploited by a remote attacker through a crafted HTML page. This aligns with exploiting a client application vulnerability to execute code.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1203/"
+        }
+      ],
+      "gpt-5.4": [
+        {
+          "technique_id": "T1189",
+          "technique_name": "Drive-by Compromise",
+          "reasoning": "The vulnerability is triggered when a victim visits a crafted HTML page in Chrome. The attack vector is remote and browser-based, making the delivery mechanism most specifically aligned with a drive-by web compromise.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1189/"
+        },
+        {
+          "technique_id": "T1203",
+          "technique_name": "Exploitation for Client Execution",
+          "reasoning": "The root cause is a heap buffer overflow in the V8 engine that can be exploited through malicious web content. This is a client-side exploitation scenario where a remote attacker may achieve code execution in the context of the targeted application.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1203/"
+        }
+      ],
+      "mistral-medium-latest": [
+        {
+          "technique_id": "T1190",
+          "technique_name": "Exploit Public-Facing Application",
+          "reasoning": "The vulnerability involves a heap buffer overflow in V8, which can be exploited via a crafted HTML page. This matches the technique of exploiting public-facing applications, as the attack vector is through a web browser (Google Chrome) and can be triggered remotely.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1190/"
+        }
+      ]
+    }
+  },
+  {
+    "cve": "CVE-2020-1472",
+    "per_model": {
+      "gpt-4o-mini": [
+        {
+          "technique_id": "T1068",
+          "technique_name": "Exploitation for Privilege Escalation",
+          "reasoning": "CVE-2020-1472 allows an attacker to exploit a vulnerability in the Netlogon protocol to gain elevated privileges on a domain controller.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1068/"
+        },
+        {
+          "technique_id": "T1203",
+          "technique_name": "Exploitation for Client Execution",
+          "reasoning": "The vulnerability can be leveraged to execute code on the domain controller, leading to further exploitation.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1203/"
+        },
+        {
+          "technique_id": "T1484",
+          "technique_name": "Domain or Tenant Policy Modification",
+          "reasoning": "Once the attacker has elevated privileges, they can modify domain policies to maintain persistence.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1484/"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "technique_id": "T1210",
+          "technique_name": "Exploitation of Remote Services",
+          "reasoning": "The vulnerability exploits a weakness in the Netlogon Remote Protocol, allowing an attacker to establish a connection to a domain controller remotely.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1210/"
+        },
+        {
+          "technique_id": "T1068",
+          "technique_name": "Exploitation for Privilege Escalation",
+          "reasoning": "The vulnerability allows an attacker to elevate privileges by exploiting the Netlogon protocol to gain domain administrator access.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1068/"
+        }
+      ],
+      "gpt-5.4": [
+        {
+          "technique_id": "T1068",
+          "technique_name": "Exploitation for Privilege Escalation",
+          "reasoning": "The CVE description explicitly states an elevation of privilege vulnerability. Zerologon abuses a flaw in the Netlogon Remote Protocol secure channel process to elevate privileges to domain-level control, making privilege escalation the primary ATT&CK behavior.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1068/"
+        },
+        {
+          "technique_id": "T1210",
+          "technique_name": "Exploitation of Remote Services",
+          "reasoning": "The attack is performed by establishing a vulnerable Netlogon secure channel connection to a domain controller over MS-NRPC, which is a remote network service. This makes exploitation of a remote service a highly relevant technique for the initial abuse vector.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1210/"
+        }
+      ],
+      "mistral-medium-latest": [
+        {
+          "technique_id": "T1068",
+          "technique_name": "Exploitation for Privilege Escalation",
+          "reasoning": "The vulnerability allows an attacker to establish a vulnerable Netlogon secure channel connection to a domain controller, leading to elevation of privilege.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1068/"
+        },
+        {
+          "technique_id": "T1008",
+          "technique_name": "Fallback Channels",
+          "reasoning": "The attack involves exploiting a vulnerable Netlogon secure channel, which is a specific protocol used for authentication.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1008/"
+        },
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "reasoning": "The exploitation of this vulnerability can lead to the creation of valid accounts with elevated privileges.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1078/"
+        },
+        {
+          "technique_id": "T1021",
+          "technique_name": "Remote Services",
+          "reasoning": "The vulnerability is exploited through the Netlogon Remote Protocol, which is a remote service.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1021/"
+        },
+        {
+          "technique_id": "T1558",
+          "technique_name": "Steal or Forge Kerberos Tickets",
+          "reasoning": "The exploitation of this vulnerability can lead to the forging of Kerberos tickets, allowing for further privilege escalation and lateral movement.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1558/"
+        }
+      ]
+    }
+  },
+  {
+    "cve": "CVE-2021-21975",
+    "per_model": {
+      "gpt-4o-mini": [
+        {
+          "technique_id": "T1190",
+          "technique_name": "Exploit Public-Facing Application",
+          "reasoning": "The vulnerability allows for exploitation of a server-side request forgery (SSRF) in a public-facing application, enabling an attacker to access internal resources.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1190/"
+        },
+        {
+          "technique_id": "T1071",
+          "technique_name": "Application Layer Protocol",
+          "reasoning": "The SSRF attack can leverage application layer protocols to communicate with internal services.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1071/"
+        },
+        {
+          "technique_id": "T1087",
+          "technique_name": "Account Discovery",
+          "reasoning": "The attack allows the malicious actor to potentially discover and steal administrative credentials.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1087/"
+        }
+      ],
+      "gpt-4o": [
+        {
+          "technique_id": "T1213",
+          "technique_name": "Data from Information Repositories",
+          "reasoning": "The SSRF vulnerability allows an attacker to access sensitive information, such as administrative credentials, from the vRealize Operations Manager.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1213/"
+        },
+        {
+          "technique_id": "T1071",
+          "technique_name": "Application Layer Protocol",
+          "reasoning": "The SSRF attack leverages HTTP requests to interact with internal services, exploiting the application layer protocol.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1071/"
+        },
+        {
+          "technique_id": "T1190",
+          "technique_name": "Exploit Public-Facing Application",
+          "reasoning": "The vulnerability is exploited through a public-facing API, allowing unauthorized access to internal resources.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1190/"
+        }
+      ],
+      "gpt-5.4": [
+        {
+          "technique_id": "T1190",
+          "technique_name": "Exploit Public-Facing Application",
+          "reasoning": "The CVE describes a network-accessible SSRF vulnerability in the vRealize Operations Manager API, a public-facing application/service. An attacker with network access can exploit this flaw remotely to coerce the server into making unintended requests, which is most specifically aligned with exploitation of a public-facing application.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1190/"
+        },
+        {
+          "technique_id": "T1557",
+          "technique_name": "Adversary-in-the-Middle",
+          "reasoning": "The stated impact is theft of administrative credentials via SSRF. Because the vulnerability enables interception or redirection of server-side requests in a way that can expose credentials during authentication flows, credential capture behavior is relevant. This is secondary to the initial exploitation stage.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1557/"
+        }
+      ],
+      "mistral-medium-latest": [
+        {
+          "technique_id": "T1083",
+          "technique_name": "File and Directory Discovery",
+          "reasoning": "The vulnerability involves discovering files and directories through an SSRF attack.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1083/"
+        },
+        {
+          "technique_id": "T1190",
+          "technique_name": "Exploit Public-Facing Application",
+          "reasoning": "The attack exploits a public-facing API in vRealize Operations Manager.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1190/"
+        },
+        {
+          "technique_id": "T1040",
+          "technique_name": "Network Sniffing",
+          "reasoning": "The SSRF attack can be used to intercept network traffic and steal credentials.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1040/"
+        },
+        {
+          "technique_id": "T1078",
+          "technique_name": "Valid Accounts",
+          "reasoning": "The stolen administrative credentials can be used to gain access to valid accounts.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1078/"
+        },
+        {
+          "technique_id": "T1005",
+          "technique_name": "Data from Local System",
+          "reasoning": "The attack aims to steal data, specifically administrative credentials, from the local system.",
+          "mitre_link": "https://attack.mitre.org/techniques/T1005/"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "cve": "CVE-2021-21148",
+    "model": "gpt-4o-mini",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1203\",\"technique_name\":\"Exploitation for Client Execution\",\"reasoning\":\"The vulnerability allows for exploitation via a crafted HTML page, which is a common vector for remote code execution in client applications.\"},{\"technique_id\":\"T1068\",\"technique_name\":\"Exploitation for Privilege Escalation\",\"reasoning\":\"If the attacker can exploit the heap buffer overflow, they may gain elevated privileges depending on the context in which the browser is running.\"},{\"technique_id\":\"T1190\",\"technique_name\":\"Exploit Public-Facing Application\",\"reasoning\":\"The attack vector involves a public-facing application (Google Chrome) that can be exploited by a remote attacker.\"},{\"technique_id\":\"T1071\",\"technique_name\":\"Application Layer Protocol\",\"reasoning\":\"The exploitation may involve communication over application layer protocols, such as HTTP, to deliver the crafted HTML page.\"},{\"technique_id\":\"T1203.001\",\"technique_name\":\"Exploitation for Client Execution: Browser\",\"reasoning\":\"This sub-technique specifically addresses exploitation in web browsers, which is relevant to the context of the vulnerability in Google Chrome.\"}]}"
+  },
+  {
+    "cve": "CVE-2021-21148",
+    "model": "gpt-4o",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1203\",\"technique_name\":\"Exploitation for Client Execution\",\"reasoning\":\"The CVE describes a heap buffer overflow in the V8 engine of Google Chrome, which can be exploited by a remote attacker through a crafted HTML page. This aligns with exploiting a client application vulnerability to execute code.\"}]}"
+  },
+  {
+    "cve": "CVE-2021-21148",
+    "model": "gpt-5.4",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1189\",\"technique_name\":\"Drive-by Compromise\",\"reasoning\":\"The vulnerability is triggered when a victim visits a crafted HTML page in Chrome. The attack vector is remote and browser-based, making the delivery mechanism most specifically aligned with a drive-by web compromise.\"},{\"technique_id\":\"T1203\",\"technique_name\":\"Exploitation for Client Execution\",\"reasoning\":\"The root cause is a heap buffer overflow in the V8 engine that can be exploited through malicious web content. This is a client-side exploitation scenario where a remote attacker may achieve code execution in the context of the targeted application.\"}]}"
+  },
+  {
+    "cve": "CVE-2021-21148",
+    "model": "mistral-medium-latest",
+    "raw_content": "[{\"technique_id\": \"T1190\", \"technique_name\": \"Exploit Public-Facing Application\", \"reasoning\": \"The vulnerability involves a heap buffer overflow in V8, which can be exploited via a crafted HTML page. This matches the technique of exploiting public-facing applications, as the attack vector is through a web browser (Google Chrome) and can be triggered remotely.\"}]"
+  },
+  {
+    "cve": "CVE-2020-1472",
+    "model": "gpt-4o-mini",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1068\",\"technique_name\":\"Exploitation for Privilege Escalation\",\"reasoning\":\"CVE-2020-1472 allows an attacker to exploit a vulnerability in the Netlogon protocol to gain elevated privileges on a domain controller.\"},{\"technique_id\":\"T1075\",\"technique_name\":\"Pass the Hash\",\"reasoning\":\"The vulnerability can be exploited to establish a secure channel connection, which may facilitate credential theft and lateral movement.\"},{\"technique_id\":\"T1077\",\"technique_name\":\"Windows Admin Shares\",\"reasoning\":\"Exploitation of this vulnerability can lead to unauthorized access to administrative shares on the network.\"},{\"technique_id\":\"T1203\",\"technique_name\":\"Exploitation for Client Execution\",\"reasoning\":\"The vulnerability can be leveraged to execute code on the domain controller, leading to further exploitation.\"},{\"technique_id\":\"T1484\",\"technique_name\":\"Domain Policy Modification\",\"reasoning\":\"Once the attacker has elevated privileges, they can modify domain policies to maintain persistence.\"}]}"
+  },
+  {
+    "cve": "CVE-2020-1472",
+    "model": "gpt-4o",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1210\",\"technique_name\":\"Exploitation of Remote Services\",\"reasoning\":\"The vulnerability exploits a weakness in the Netlogon Remote Protocol, allowing an attacker to establish a connection to a domain controller remotely.\"},{\"technique_id\":\"T1068\",\"technique_name\":\"Exploitation for Privilege Escalation\",\"reasoning\":\"The vulnerability allows an attacker to elevate privileges by exploiting the Netlogon protocol to gain domain administrator access.\"}]}"
+  },
+  {
+    "cve": "CVE-2020-1472",
+    "model": "gpt-5.4",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1068\",\"technique_name\":\"Exploitation for Privilege Escalation\",\"reasoning\":\"The CVE description explicitly states an elevation of privilege vulnerability. Zerologon abuses a flaw in the Netlogon Remote Protocol secure channel process to elevate privileges to domain-level control, making privilege escalation the primary ATT&CK behavior.\"},{\"technique_id\":\"T1210\",\"technique_name\":\"Exploitation of Remote Services\",\"reasoning\":\"The attack is performed by establishing a vulnerable Netlogon secure channel connection to a domain controller over MS-NRPC, which is a remote network service. This makes exploitation of a remote service a highly relevant technique for the initial abuse vector.\"}]}"
+  },
+  {
+    "cve": "CVE-2020-1472",
+    "model": "mistral-medium-latest",
+    "raw_content": "[{\n  \"technique_id\": \"T1068\",\n  \"technique_name\": \"Exploitation for Privilege Escalation\",\n  \"reasoning\": \"The vulnerability allows an attacker to establish a vulnerable Netlogon secure channel connection to a domain controller, leading to elevation of privilege.\"\n},\n{\n  \"technique_id\": \"T1008\",\n  \"technique_name\": \"Fallback Channels\",\n  \"reasoning\": \"The attack involves exploiting a vulnerable Netlogon secure channel, which is a specific protocol used for authentication.\"\n},\n{\n  \"technique_id\": \"T1078\",\n  \"technique_name\": \"Valid Accounts\",\n  \"reasoning\": \"The exploitation of this vulnerability can lead to the creation of valid accounts with elevated privileges.\"\n},\n{\n  \"technique_id\": \"T1021\",\n  \"technique_name\": \"Remote Services\",\n  \"reasoning\": \"The vulnerability is exploited through the Netlogon Remote Protocol, which is a remote service.\"\n},\n{\n  \"technique_id\": \"T1558\",\n  \"technique_name\": \"Steal or Forge Kerberos Tickets\",\n  \"reasoning\": \"The exploitation of this vulnerability can lead to the forging of Kerberos tickets, allowing for further privilege escalation and lateral movement.\"\n}]"
+  },
+  {
+    "cve": "CVE-2021-21975",
+    "model": "gpt-4o-mini",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1190\",\"technique_name\":\"Exploit Public-Facing Application\",\"reasoning\":\"The vulnerability allows for exploitation of a server-side request forgery (SSRF) in a public-facing application, enabling an attacker to access internal resources.\"},{\"technique_id\":\"T1071\",\"technique_name\":\"Application Layer Protocol\",\"reasoning\":\"The SSRF attack can leverage application layer protocols to communicate with internal services.\"},{\"technique_id\":\"T1087\",\"technique_name\":\"Account Discovery\",\"reasoning\":\"The attack allows the malicious actor to potentially discover and steal administrative credentials.\"}]}"
+  },
+  {
+    "cve": "CVE-2021-21975",
+    "model": "gpt-4o",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1213\",\"technique_name\":\"Data from Information Repositories\",\"reasoning\":\"The SSRF vulnerability allows an attacker to access sensitive information, such as administrative credentials, from the vRealize Operations Manager.\"},{\"technique_id\":\"T1071\",\"technique_name\":\"Application Layer Protocol\",\"reasoning\":\"The SSRF attack leverages HTTP requests to interact with internal services, exploiting the application layer protocol.\"},{\"technique_id\":\"T1190\",\"technique_name\":\"Exploit Public-Facing Application\",\"reasoning\":\"The vulnerability is exploited through a public-facing API, allowing unauthorized access to internal resources.\"}]}"
+  },
+  {
+    "cve": "CVE-2021-21975",
+    "model": "gpt-5.4",
+    "raw_content": "{\"mappings\":[{\"technique_id\":\"T1190\",\"technique_name\":\"Exploit Public-Facing Application\",\"reasoning\":\"The CVE describes a network-accessible SSRF vulnerability in the vRealize Operations Manager API, a public-facing application/service. An attacker with network access can exploit this flaw remotely to coerce the server into making unintended requests, which is most specifically aligned with exploitation of a public-facing application.\"},{\"technique_id\":\"T1557\",\"technique_name\":\"Adversary-in-the-Middle\",\"reasoning\":\"The stated impact is theft of administrative credentials via SSRF. Because the vulnerability enables interception or redirection of server-side requests in a way that can expose credentials during authentication flows, credential capture behavior is relevant. This is secondary to the initial exploitation stage.\"}]}"
+  },
+  {
+    "cve": "CVE-2021-21975",
+    "model": "mistral-medium-latest",
+    "raw_content": "[{\n  \"technique_id\": \"T1083\",\n  \"technique_name\": \"File and Directory Discovery\",\n  \"reasoning\": \"The vulnerability involves discovering files and directories through an SSRF attack.\"\n},\n{\n  \"technique_id\": \"T1190\",\n  \"technique_name\": \"Exploit Public-Facing Application\",\n  \"reasoning\": \"The attack exploits a public-facing API in vRealize Operations Manager.\"\n},\n{\n  \"technique_id\": \"T1040\",\n  \"technique_name\": \"Network Sniffing\",\n  \"reasoning\": \"The SSRF attack can be used to intercept network traffic and steal credentials.\"\n},\n{\n  \"technique_id\": \"T1078\",\n  \"technique_name\": \"Valid Accounts\",\n  \"reasoning\": \"The stolen administrative credentials can be used to gain access to valid accounts.\"\n},\n{\n  \"technique_id\": \"T1005\",\n  \"technique_name\": \"Data from Local System\",\n  \"reasoning\": \"The attack aims to steal data, specifically administrative credentials, from the local system.\"\n}]"
+  }
+]

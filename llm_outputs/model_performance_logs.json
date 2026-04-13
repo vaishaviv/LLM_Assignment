@@ -1,0 +1,103 @@
+[
+  {
+    "model": "gpt-4o-mini",
+    "cve": "CVE-2021-21148",
+    "latency_seconds": 7.96,
+    "valid_count": 4,
+    "hallucinated_ids": [
+      "T1203.001"
+    ],
+    "hallucination_rate": 0.2
+  },
+  {
+    "model": "gpt-4o",
+    "cve": "CVE-2021-21148",
+    "latency_seconds": 2.34,
+    "valid_count": 1,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "gpt-5.4",
+    "cve": "CVE-2021-21148",
+    "latency_seconds": 3.43,
+    "valid_count": 2,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "mistral-medium-latest",
+    "cve": "CVE-2021-21148",
+    "latency_seconds": 2.65,
+    "valid_count": 1,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "gpt-4o-mini",
+    "cve": "CVE-2020-1472",
+    "latency_seconds": 3.46,
+    "valid_count": 3,
+    "hallucinated_ids": [
+      "T1075",
+      "T1077"
+    ],
+    "hallucination_rate": 0.4
+  },
+  {
+    "model": "gpt-4o",
+    "cve": "CVE-2020-1472",
+    "latency_seconds": 2.04,
+    "valid_count": 2,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "gpt-5.4",
+    "cve": "CVE-2020-1472",
+    "latency_seconds": 3.23,
+    "valid_count": 2,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "mistral-medium-latest",
+    "cve": "CVE-2020-1472",
+    "latency_seconds": 2.76,
+    "valid_count": 5,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "gpt-4o-mini",
+    "cve": "CVE-2021-21975",
+    "latency_seconds": 2.34,
+    "valid_count": 3,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "gpt-4o",
+    "cve": "CVE-2021-21975",
+    "latency_seconds": 2.8,
+    "valid_count": 3,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "gpt-5.4",
+    "cve": "CVE-2021-21975",
+    "latency_seconds": 4.15,
+    "valid_count": 2,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  },
+  {
+    "model": "mistral-medium-latest",
+    "cve": "CVE-2021-21975",
+    "latency_seconds": 5.0,
+    "valid_count": 5,
+    "hallucinated_ids": [],
+    "hallucination_rate": 0.0
+  }
+]
